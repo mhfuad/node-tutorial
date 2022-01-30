@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mhfuad/node-tutorial#readme",
   "dependencies": {
+    "dotenv": "^14.3.2",
     "express": "^4.17.2"
   },
   "devDependencies": {

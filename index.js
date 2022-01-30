@@ -1,13 +1,16 @@
 import express from "express";
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv'
 
 import fileUploadRoute from './routes/fileUpload.js';
 
 const app = express();
 
-const PORT = 5000;
-
+//for body parser
 app.use(bodyParser.json());
+
+//for access env file 
+dotenv.config();
 
 app.use('/file', fileUploadRoute);
 
@@ -17,6 +20,6 @@ app.get('/', (req, res)=>{
     res.send("hello from Home page");
 })
 
-app.listen(PORT, ()=> {
-    console.log(`Server running on port: http://localhost:${PORT}`)
+app.listen(process.env.PORT ?? 5000, ()=> {
+    console.log(`Server running on port: http://localhost:${process.env.PORT}`)
 })
