@@ -1,0 +1,22 @@
+{
+  "name": "node-tutorial",
+  "version": "1.0.0",
+  "description": "node.js tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhfuad/node-tutorial.git"
+  },
+  "author": "fuad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhfuad/node-tutorial/issues"
+  },
+  "homepage": "https://github.com/mhfuad/node-tutorial#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
