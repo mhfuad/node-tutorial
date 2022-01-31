@@ -3,7 +3,8 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv'
 
 
-import fileUploadRoute from './routes/fileUpload.js';
+import fileUploadRoute from './routes/fileUploadRoute.js';
+import userRoute from './routes/userRoute.js'
 
 const app = express();
 
@@ -13,10 +14,10 @@ app.use(bodyParser.json());
 //for access env file 
 dotenv.config();
 
-//file router
+//file routes
 app.use('/file', fileUploadRoute);
-
-
+//user routes
+app.use('/users', userRoute);
 
 //home router
 app.get('/', (req, res)=>{
