@@ -1,8 +1,4 @@
-import express from "express";
-import { uploadFile } from '../controllers/fileupload.js'
 import multer from "multer";
-
-const router = express.Router();
 
 //Configuration for Multer
 const fileStorageEngine = multer.diskStorage({
@@ -15,7 +11,7 @@ const fileStorageEngine = multer.diskStorage({
 });
 const upload = multer({ storage: fileStorageEngine });
 
-
-router.post('/', upload.single("image"), uploadFile)
-
-export default router;
+export const uploadFile = (req, res) => {
+    console.log(req.file)
+    res.send(req.file.path);
+}

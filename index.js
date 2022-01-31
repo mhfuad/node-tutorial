@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv'
 
+
 import fileUploadRoute from './routes/fileUpload.js';
 
 const app = express();
@@ -12,11 +13,14 @@ app.use(bodyParser.json());
 //for access env file 
 dotenv.config();
 
+//file router
 app.use('/file', fileUploadRoute);
 
-app.get('/', (req, res)=>{
-    console.log('[test}!');
 
+
+//home router
+app.get('/', (req, res)=>{
+    console.log('[Home router ]!');
     res.send("hello from Home page");
 })
 
